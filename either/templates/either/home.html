@@ -1,0 +1,20 @@
+{% extends 'either/base.html' %}
+
+
+{{ title }}
+
+{% block content%}
+<div class="text-center">
+<h1>Сокра.тим</h1>
+<p>Быстро сократим любую длинную ссылку для вашего проекта</p>
+
+<!-- <a class="btn" href="{% url 'profile' %}"> -->
+<form class="btn" action="{% url 'profile' %}">
+  <button type="submit" >Кабинет пользователя</button>
+</form>
+<!-- </a> -->
+
+
+</div>
+
+{% endblock%}

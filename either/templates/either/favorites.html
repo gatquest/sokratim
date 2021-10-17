@@ -1,0 +1,32 @@
+{% extends 'either/base.html' %}
+
+
+{% block title%}
+ Создание ссылок
+{% endblock%}
+
+{% block content%}
+<div class="text-center">
+<h2>  Создание ссылок </h2>
+</div>
+<form method="post" class="form-register auth">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button class="btn" type="submit">Добавить</button>
+
+</form>
+<br>
+<div class="text-center">
+<h2>Доступные сслыки</h2>
+</div>
+  {% for fav in favs %}
+
+  <div class="ssilki">
+    <span class="text-muted">Ссылка - </span>
+    <a id="link" href="{{ fav.link_name }}">/link/{{ fav.short_name }}</a>
+  </div>
+
+  {% endfor %}
+
+</div>
+{% endblock %}

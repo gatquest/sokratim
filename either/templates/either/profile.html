@@ -1,0 +1,30 @@
+{% extends 'either/base.html' %}
+
+{% block title%}
+ Кабинет пользователя
+{% endblock%}
+
+{% block content%}
+<div class="text-center">
+<h2>  Кабинет пользователя </h2>
+<p><b>@{{ user.username }}</b></p>
+<p><b>E-mail:</b>{{ user.email }}</p>
+
+<form class="btn" action="{% url 'exit' %}">
+  <button>Выйти</button>
+</form>
+</div>
+<br>
+<br>
+<div class="text-center">
+<h2>Изменить данные пользователя</h2>
+</div>
+<form method="post" class="form-register auth">
+  {% csrf_token %}
+  {{ updateUserForm.as_p }}
+  <button type="submit">Обновить</button>
+
+</form>
+
+
+{% endblock %}

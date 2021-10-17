@@ -1,0 +1,22 @@
+{% extends 'either/base.html' %}
+
+
+{% block title%}
+ Выход из кабинета
+{% endblock%}
+
+{% block content%}
+<div class="text-center">
+<h2> Вы успешно вышли из аккаунта </h2>
+<a class="linkr" href="{% url 'login' %}"> Войти в личный кабинет снова</a>
+</div>
+
+
+
+{% endblock %}
+
+
+{% block aside %}
+<h3>Боковая часть</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, voluptatibus.</p>
+{% endblock %}

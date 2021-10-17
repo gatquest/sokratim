@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'either/style.css' %}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+  crossorigin ="anonymous">
+  <title>{% block title%} Сокра.тим {% endblock%}</title>
+</head>
+<body>
+<header>
+  <nav>
+  <div class="cat">
+    <img src="{% static 'either/cat.png' %}" alt="">
+
+  <div class="welcome-text">
+    <h4>Уберем все лишнее из ссылки!</h4>
+  </div>
+  </div>
+
+
+
+    <ul class="">
+
+
+      {% if not user.is_authenticated %}
+      <li class="nav-but">
+        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">  <br> <br><br> <br> <br> <br>   </a>
+      </li>
+
+      <li class="nav-but">
+        <a class="nav-link" href="{% url 'registration' %}">Регистрация</a>
+      </li>
+      <li class="nav-but">
+        <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Войти</a>
+      </li>
+      {% else %}
+      <li class="nav-but">
+        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">  <br> <br><br> <br> <br> <br>   </a>
+      </li>
+
+      <li class="nav-but">
+        <a class="nav-link" href="{% url 'favorites' %}">Ссылки</a>
+      </li>
+      <li class="nav-but">
+        <a class="nav-link active" aria-current="page" href="{% url 'profile' %}">Личный кабинет</a>
+      </li>
+      {% endif %}
+      <li class="nav-but">
+        <a class="nav-link" href="{% url 'about' %}">Про нас</a>
+      </li>
+      <li class="nav-but">
+        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<div class="contentmain">
+  {% block content%}
+
+  {% endblock%}
+</div>
+<footer>
+  <p>Все права защищены &copy;</p>
+  <div class="alsowe">
+    <a href="https://twitter.com"><div><i class="fab fa-twitter"></i></div></a>
+    <a href="https://youtube.com"><div><i class="fab fa-youtube"></i></div></a>
+    <a href="https://vk.com"><div><i class="fab fa-vk"></i></div></a>
+    <a href="https://telegram.com"><div><i class="fab fa-telegram"></i></div></a>
+  </div>
+</footer>
+<script src="https://kit.fontawesome.com/f596c8f253.js" crossorigin="anonymous"></script>
+</body>
+</html>
